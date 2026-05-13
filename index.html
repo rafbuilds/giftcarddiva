@@ -1,0 +1,2125 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Untuk Diva Olivia 👑</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --bg: #06030a;
+        --sf: #110a14;
+        --sf2: #1c1222;
+        --rose: #c4856a;
+        --rose-l: #e8a898;
+        --rose-d: #8a4a38;
+        --lav: #8b7ec8;
+        --lav-l: #bdb0e8;
+        --lav-d: #4a3e8a;
+        --champ: #e2c99a;
+        --champ-l: #f0dfb8;
+        --champ-d: #9a8050;
+        --blush: #d4899a;
+        --cream: #f0e0d8;
+        --tx: #b89898;
+        --txl: #ddd0c8;
+        --mu: #4a3040;
+      }
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--bg);
+        color: var(--txl);
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      /* ── particles ── */
+      #pts {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+      }
+      .pt {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0;
+        animation: drift var(--d, 8s) ease-in-out var(--dl, 0s) infinite;
+      }
+      @keyframes drift {
+        0% {
+          transform: translateY(100vh) translateX(0) rotate(0deg);
+          opacity: 0;
+        }
+        15% {
+          opacity: 0.7;
+        }
+        85% {
+          opacity: 0.2;
+        }
+        100% {
+          transform: translateY(-10vh) translateX(var(--x, 20px)) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      /* ── screens ── */
+      .screen {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        z-index: 10;
+        transition:
+          opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+          transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .screen.hidden {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(18px);
+      }
+      .screen.exit {
+        opacity: 0;
+        transform: translateY(-18px);
+      }
+      #s-msg,
+      #s-game,
+      #s-card {
+        display: block;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        padding: 0;
+      }
+      .sw {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.3rem;
+        padding: 4.5rem 1.5rem 5rem;
+      }
+
+      /* ── animation sequences ── */
+      .sq > * {
+        opacity: 0;
+        transform: translateY(14px);
+        animation: fu 0.75s ease both;
+      }
+      .sq > *:nth-child(1) {
+        animation-delay: 0.2s;
+      }
+      .sq > *:nth-child(2) {
+        animation-delay: 0.38s;
+      }
+      .sq > *:nth-child(3) {
+        animation-delay: 0.54s;
+      }
+      .sq > *:nth-child(4) {
+        animation-delay: 0.68s;
+      }
+      .sq > *:nth-child(5) {
+        animation-delay: 0.8s;
+      }
+      .sq > *:nth-child(6) {
+        animation-delay: 0.92s;
+      }
+      .sq > *:nth-child(7) {
+        animation-delay: 1.04s;
+      }
+      .sq > *:nth-child(8) {
+        animation-delay: 1.16s;
+      }
+      @keyframes fu {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .cr {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fu 0.65s ease both;
+      }
+      .cr.d1 {
+        animation-delay: 0.1s;
+      }
+      .cr.d2 {
+        animation-delay: 0.25s;
+      }
+      .cr.d3 {
+        animation-delay: 0.4s;
+      }
+      .cr.d4 {
+        animation-delay: 0.55s;
+      }
+      .cr.d5 {
+        animation-delay: 0.7s;
+      }
+
+      /* ── INTRO ── */
+      #s-intro {
+        text-align: center;
+        background:
+          radial-gradient(ellipse at 30% 20%, #2a0a2e44 0%, transparent 60%),
+          radial-gradient(ellipse at 70% 80%, #1a0a3a44 0%, transparent 60%);
+      }
+      .crown {
+        font-size: 3rem;
+        display: block;
+        margin-bottom: 0.8rem;
+        animation: crown-bounce 2s ease-in-out infinite;
+      }
+      @keyframes crown-bounce {
+        0%,
+        100% {
+          transform: translateY(0) rotate(-3deg);
+        }
+        50% {
+          transform: translateY(-10px) rotate(3deg);
+        }
+      }
+      .i-eyebrow {
+        font-size: 0.68rem;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: var(--rose);
+        margin-bottom: 1.4rem;
+      }
+      .i-name {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.8rem, 8vw, 5.5rem);
+        font-weight: 700;
+        color: var(--cream);
+        line-height: 1.05;
+      }
+      .i-name span {
+        background: linear-gradient(
+          135deg,
+          var(--rose-l),
+          var(--champ),
+          var(--lav-l)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .i-age {
+        font-family: "Playfair Display", serif;
+        font-size: 1.1rem;
+        font-style: italic;
+        color: var(--champ);
+        margin: 0.8rem 0;
+      }
+      .i-divider {
+        width: 60px;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--rose-d),
+          transparent
+        );
+        margin: 0.9rem auto 1.4rem;
+      }
+      .i-hint {
+        font-size: 0.85rem;
+        color: var(--tx);
+        margin-bottom: 2rem;
+        line-height: 1.6;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        border: 1px solid var(--rose-d);
+        color: var(--rose-l);
+        background: transparent;
+        padding: 0.85rem 2.4rem;
+        border-radius: 2px;
+        font-family: "DM Sans", sans-serif;
+        font-size: 0.82rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .btn:hover {
+        background: var(--rose);
+        color: #fff;
+        border-color: var(--rose);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(196, 133, 106, 0.35);
+      }
+      .btn:active {
+        transform: translateY(0);
+      }
+      .arr {
+        transition: transform 0.3s;
+      }
+      .btn:hover .arr {
+        transform: translateX(4px);
+      }
+
+      /* ── HALL ── */
+      #s-hall {
+        gap: 2rem;
+        background: radial-gradient(
+          ellipse at 50% 0%,
+          #2a0a2e22 0%,
+          transparent 60%
+        );
+      }
+      .hall-h {
+        text-align: center;
+      }
+      .hall-h h2 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.5rem, 4vw, 2.2rem);
+        font-weight: 400;
+        color: var(--cream);
+      }
+      .hall-h p {
+        font-size: 0.7rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--tx);
+        margin-top: 0.4rem;
+      }
+      .gift-row {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-end;
+      }
+      .hall-foot {
+        font-size: 0.72rem;
+        letter-spacing: 0.15em;
+        color: var(--mu);
+        text-transform: uppercase;
+      }
+
+      /* ── GIFT BOX ── */
+      .gw {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.9rem;
+        cursor: pointer;
+      }
+      .gw:hover:not(.opened) .gb {
+        transform: translateY(-8px);
+      }
+      .gw:hover:not(.opened) .glow {
+        opacity: 1;
+      }
+      .gw.opened .gb {
+        opacity: 0.3;
+        transform: scale(0.93);
+      }
+      .gw.opened .gn,
+      .gw.opened .gl {
+        opacity: 0.4;
+      }
+      .gb {
+        position: relative;
+        transition:
+          transform 0.4s cubic-bezier(0.34, 1.4, 0.64, 1),
+          opacity 0.4s;
+      }
+      .glow {
+        position: absolute;
+        inset: -16px;
+        border-radius: 4px;
+        opacity: 0;
+        transition: opacity 0.4s;
+        pointer-events: none;
+        filter: blur(12px);
+      }
+      .lid {
+        transform-origin: center bottom;
+        transition:
+          transform 0.85s cubic-bezier(0.4, 1.3, 0.6, 1),
+          opacity 0.5s;
+      }
+      .gw.shaking .lid,
+      .gw.shaking .gbody {
+        animation: shake 0.65s ease;
+      }
+      .gw.opening .lid {
+        transform: translateY(-80px) rotate(-12deg);
+        opacity: 0;
+      }
+      @keyframes shake {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20% {
+          transform: rotate(-6deg);
+        }
+        40% {
+          transform: rotate(6deg);
+        }
+        60% {
+          transform: rotate(-4deg);
+        }
+        80% {
+          transform: rotate(4deg);
+        }
+      }
+      .gn {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        color: var(--rose-d);
+        transition:
+          color 0.3s,
+          opacity 0.4s;
+        line-height: 1;
+      }
+      .gl {
+        font-size: 0.7rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--tx);
+        transition:
+          color 0.3s,
+          opacity 0.4s;
+      }
+      .gw:hover:not(.opened) .gn {
+        color: var(--rose-l);
+      }
+      .gw:hover:not(.opened) .gl {
+        color: var(--rose);
+      }
+
+      /* ── BACK & PROGRESS ── */
+      .back-inner {
+        align-self: flex-start;
+        border: 1px solid var(--mu);
+        background: transparent;
+        color: var(--tx);
+        padding: 0.45rem 1.1rem;
+        border-radius: 2px;
+        font-family: "DM Sans", sans-serif;
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .back-inner:hover {
+        border-color: var(--rose);
+        color: var(--rose);
+      }
+      #prog {
+        position: fixed;
+        top: 1.4rem;
+        right: 1.5rem;
+        z-index: 50;
+        display: flex;
+        gap: 0.45rem;
+        align-items: center;
+      }
+      .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--mu);
+        transition: all 0.4s;
+      }
+      .dot.active {
+        background: var(--rose);
+        transform: scale(1.4);
+      }
+      .dot.done {
+        background: var(--rose-d);
+      }
+      .next-row {
+        text-align: center;
+        margin-top: 0.5rem;
+      }
+
+      /* ── MESSAGE CARD ── */
+      .msg-card {
+        max-width: 560px;
+        width: 100%;
+        border: 1px solid var(--mu);
+        border-radius: 4px;
+        padding: 2.5rem 2.2rem;
+        background: var(--sf);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .msg-card::before {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        border-radius: 4px;
+        background: linear-gradient(
+          135deg,
+          var(--rose-d) 0%,
+          transparent 40%,
+          var(--lav-d) 100%
+        );
+        z-index: -1;
+      }
+      .msg-card::after {
+        content: "✦ ✦ ✦";
+        position: absolute;
+        top: 0.8rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.55rem;
+        letter-spacing: 0.4em;
+        color: var(--rose-d);
+        opacity: 0.6;
+      }
+      .c-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        display: block;
+      }
+      .c-eye {
+        font-size: 0.65rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--rose);
+        margin-bottom: 0.9rem;
+      }
+      .c-title {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+        font-weight: 700;
+        color: var(--cream);
+        line-height: 1.1;
+        margin-bottom: 1.2rem;
+      }
+      .c-div {
+        width: 40px;
+        height: 1px;
+        background: linear-gradient(90deg, var(--rose-d), var(--lav-d));
+        margin: 0 auto 1.2rem;
+      }
+      .c-body {
+        font-family: "Playfair Display", serif;
+        font-size: 1.05rem;
+        line-height: 1.9;
+        color: var(--txl);
+      }
+      .c-body em {
+        color: var(--rose-l);
+        font-style: normal;
+        font-weight: 600;
+      }
+      .c-body .funny {
+        color: var(--lav-l);
+        font-style: italic;
+      }
+      .c-sig {
+        margin-top: 1.8rem;
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: 0.95rem;
+        color: var(--tx);
+      }
+
+      /* ── FACT CARDS ── */
+      .facts-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 0.9rem;
+        max-width: 560px;
+        width: 100%;
+      }
+      .fact {
+        border-radius: 4px;
+        padding: 1.2rem 1.3rem;
+        text-align: left;
+        position: relative;
+        overflow: hidden;
+      }
+      .fact::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.03) 0%,
+          transparent 60%
+        );
+      }
+      .fact .fi {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+      .fact .ft {
+        font-size: 0.65rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        margin-bottom: 0.35rem;
+      }
+      .fact .fb {
+        font-size: 0.9rem;
+        line-height: 1.55;
+        color: var(--txl);
+      }
+      .fact.rose {
+        background: rgba(196, 133, 106, 0.1);
+        border: 1px solid rgba(196, 133, 106, 0.25);
+      }
+      .fact.rose .ft {
+        color: var(--rose);
+      }
+      .fact.lav {
+        background: rgba(139, 126, 200, 0.1);
+        border: 1px solid rgba(139, 126, 200, 0.25);
+      }
+      .fact.lav .ft {
+        color: var(--lav-l);
+      }
+      .fact.champ {
+        background: rgba(226, 201, 154, 0.1);
+        border: 1px solid rgba(226, 201, 154, 0.25);
+      }
+      .fact.champ .ft {
+        color: var(--champ);
+      }
+      .fact.blush {
+        background: rgba(212, 137, 154, 0.1);
+        border: 1px solid rgba(212, 137, 154, 0.25);
+      }
+      .fact.blush .ft {
+        color: var(--blush);
+      }
+
+      /* ── GAME ── */
+      .game-card {
+        max-width: 600px;
+        width: 100%;
+        border: 1px solid var(--mu);
+        border-radius: 4px;
+        background: var(--sf);
+        overflow: hidden;
+      }
+      .gh {
+        padding: 1.3rem 1.8rem;
+        border-bottom: 1px solid var(--mu);
+      }
+      .gh h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--cream);
+      }
+      .gh p {
+        font-size: 0.75rem;
+        color: var(--tx);
+        margin-top: 0.2rem;
+      }
+      .gstats {
+        display: flex;
+        gap: 1.2rem;
+        padding: 0.9rem 1.8rem;
+        border-bottom: 1px solid var(--mu);
+        flex-wrap: wrap;
+      }
+      .gs {
+        display: flex;
+        flex-direction: column;
+      }
+      .gs span {
+        font-size: 0.62rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--tx);
+      }
+      .gs strong {
+        font-family: "Playfair Display", serif;
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: var(--rose-l);
+        line-height: 1;
+      }
+      .ttrack {
+        height: 2px;
+        background: var(--sf2);
+      }
+      #tbar {
+        height: 100%;
+        background: linear-gradient(90deg, var(--rose), var(--lav));
+        transition: width 0.1s linear;
+      }
+      #arena {
+        width: 100%;
+        height: 360px;
+        position: relative;
+        overflow: hidden;
+        background: var(--bg);
+        cursor: default;
+      }
+      .item-fall {
+        position: absolute;
+        font-size: 1.8rem;
+        cursor: pointer;
+        animation: falling linear forwards;
+        user-select: none;
+      }
+      @keyframes falling {
+        0% {
+          transform: translateY(-60px) rotate(0deg);
+        }
+        100% {
+          transform: translateY(420px) rotate(360deg);
+        }
+      }
+      .item-fall:hover {
+        filter: brightness(1.3);
+      }
+      .catch-fx {
+        position: absolute;
+        pointer-events: none;
+        font-size: 1.5rem;
+        animation: pfx 0.5s ease-out forwards;
+      }
+      @keyframes pfx {
+        0% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(2.5) translateY(-20px);
+        }
+      }
+      .pts-fx {
+        position: absolute;
+        pointer-events: none;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--rose-l);
+        animation: sfx 0.8s ease-out forwards;
+      }
+      @keyframes sfx {
+        0% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+      }
+      .miss-fx {
+        position: absolute;
+        pointer-events: none;
+        font-size: 0.8rem;
+        color: #888;
+        animation: sfx 0.6s ease-out forwards;
+      }
+      #aov {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(6, 3, 10, 0.9);
+        text-align: center;
+        padding: 2rem;
+        transition: opacity 0.4s;
+      }
+      #aov h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: var(--cream);
+        margin: 0.5rem 0;
+      }
+      #aov p {
+        font-size: 0.88rem;
+        color: var(--tx);
+        line-height: 1.6;
+        max-width: 280px;
+      }
+      .score-big {
+        font-family: "Playfair Display", serif;
+        font-size: 4rem;
+        font-weight: 700;
+        color: var(--rose-l);
+        line-height: 1;
+        margin: 0.4rem 0;
+      }
+      .btn-g {
+        margin-top: 1rem;
+        border: 1px solid var(--rose-d);
+        color: var(--rose-l);
+        background: transparent;
+        padding: 0.7rem 2rem;
+        border-radius: 2px;
+        font-family: "DM Sans", sans-serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .btn-g:hover {
+        background: var(--rose);
+        color: #fff;
+        border-color: var(--rose);
+      }
+      #linfo {
+        padding: 0.55rem 1.8rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--tx);
+        min-height: 1.9rem;
+        border-top: 1px solid var(--mu);
+        text-align: center;
+      }
+
+      /* ── FINAL CARD ── */
+      .final-card {
+        max-width: 520px;
+        width: 100%;
+        border: 1px solid var(--mu);
+        border-radius: 4px;
+        padding: 2.8rem 2.4rem;
+        background: var(--sf);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .final-card::before {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        border-radius: 4px;
+        background: linear-gradient(
+          135deg,
+          var(--lav-d) 0%,
+          transparent 40%,
+          var(--rose-d) 100%
+        );
+        z-index: -1;
+      }
+      .ribbon-deco {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 80px;
+        height: 80px;
+        overflow: hidden;
+      }
+      .ribbon-deco::after {
+        content: "QUEEN";
+        position: absolute;
+        top: 20px;
+        right: -18px;
+        background: var(--rose);
+        color: #fff;
+        font-size: 0.55rem;
+        letter-spacing: 0.15em;
+        padding: 0.25rem 1.5rem;
+        transform: rotate(45deg);
+        white-space: nowrap;
+      }
+      .q-title {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.6rem, 4vw, 2.4rem);
+        font-weight: 700;
+        color: var(--cream);
+        line-height: 1.1;
+        margin: 1rem 0;
+      }
+      .q-body {
+        font-family: "Playfair Display", serif;
+        font-size: 1.05rem;
+        line-height: 1.9;
+        color: var(--txl);
+      }
+      .q-body em {
+        color: var(--rose-l);
+        font-style: normal;
+      }
+      .q-funny {
+        background: rgba(139, 126, 200, 0.12);
+        border: 1px solid rgba(139, 126, 200, 0.25);
+        border-radius: 4px;
+        padding: 1rem 1.2rem;
+        margin: 1.2rem 0;
+        font-size: 0.92rem;
+        line-height: 1.7;
+        color: var(--lav-l);
+        font-style: italic;
+      }
+      .q-sig {
+        margin-top: 1.5rem;
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: 0.95rem;
+        color: var(--tx);
+      }
+      .heart-row {
+        font-size: 1.5rem;
+        letter-spacing: 0.5rem;
+        display: block;
+        margin-top: 1rem;
+        animation: heart-pulse 1.5s ease-in-out infinite;
+      }
+      @keyframes heart-pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.08);
+        }
+      }
+
+      /* ── ALFAMART VOUCHER ── */
+      .v-alfa-outer {
+        max-width: 520px;
+        width: 100%;
+        border: 1px solid var(--mu);
+        border-radius: 4px;
+        overflow: hidden;
+        background: var(--sf);
+      }
+      .v-alfa-lbl {
+        font-size: 0.68rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--rose);
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+      .vcard-alfa {
+        background: #fff;
+      }
+      .vh-alfa {
+        background: #00843d;
+        padding: 1.2rem 1.4rem;
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+      }
+      .vlogo-alfa {
+        background: #fff;
+        border-radius: 6px;
+        padding: 0.4rem 0.75rem;
+        font-weight: 800;
+        font-size: 1rem;
+        color: #00843d;
+        letter-spacing: -0.3px;
+        white-space: nowrap;
+      }
+      .vlogo-alfa span {
+        color: #e31837;
+      }
+      .vht-alfa {
+        color: #fff;
+      }
+      .vht-alfa h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.15rem;
+        font-weight: 700;
+      }
+      .vht-alfa p {
+        font-size: 0.78rem;
+        opacity: 0.85;
+        margin-top: 0.1rem;
+      }
+      .vbody-alfa {
+        padding: 1.4rem 1.4rem 1rem;
+        background: #fff;
+      }
+      .vtag-alfa {
+        display: inline-block;
+        background: #f0fff4;
+        color: #00843d;
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 0.22rem 0.7rem;
+        border-radius: 2px;
+        margin-bottom: 0.9rem;
+        border: 1px solid #00843d44;
+      }
+      .vamt-alfa {
+        text-align: center;
+        margin-bottom: 1.1rem;
+      }
+      .vamt-alfa .vl {
+        font-size: 0.68rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: #888;
+        margin-bottom: 0.25rem;
+      }
+      .vamt-alfa .vv {
+        font-family: "Playfair Display", serif;
+        font-size: 3rem;
+        font-weight: 700;
+        color: #00843d;
+        line-height: 1;
+      }
+      .vamt-alfa .vs {
+        font-size: 0.78rem;
+        color: #999;
+        margin-top: 0.3rem;
+      }
+      .vdash-alfa {
+        border: none;
+        background: repeating-linear-gradient(
+          90deg,
+          #ddd 0,
+          #ddd 10px,
+          transparent 10px,
+          transparent 18px
+        );
+        height: 1px;
+        margin: 0.9rem 0;
+      }
+      .bczone-alfa {
+        border-radius: 4px;
+        padding: 1rem;
+        text-align: center;
+        background: #f8f8f8;
+        border: 1.5px dashed #ccc;
+      }
+      .bczone-alfa img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border-radius: 4px;
+        cursor: zoom-in;
+        transition: opacity 0.2s;
+      }
+      .bczone-alfa img:hover {
+        opacity: 0.9;
+      }
+      .zoom-hint-alfa {
+        font-size: 0.65rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #aaa;
+        margin-top: 0.4rem;
+      }
+      .bcnum-alfa {
+        font-family: monospace;
+        font-size: 0.82rem;
+        color: #333;
+        letter-spacing: 2px;
+        margin-top: 0.4rem;
+        font-weight: 500;
+      }
+      .vfoot-alfa {
+        padding: 0.9rem 1.4rem;
+        background: #f0fff4;
+        border-top: 1px solid #d0eedd;
+      }
+      .vfoot-alfa p {
+        font-size: 0.75rem;
+        color: #888;
+        line-height: 1.7;
+      }
+      .vfoot-alfa strong {
+        color: #00843d;
+      }
+      /* lightbox */
+      #lb2 {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.93);
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        cursor: zoom-out;
+      }
+      #lb2.on {
+        display: flex;
+      }
+      #lb2 img {
+        max-width: 94vw;
+        max-height: 92vh;
+        border-radius: 8px;
+        animation: lbIn 0.3s cubic-bezier(0.34, 1.4, 0.64, 1);
+      }
+      @keyframes lbIn {
+        from {
+          transform: scale(0.85);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      #lb2-x {
+        position: fixed;
+        top: 1.2rem;
+        right: 1.4rem;
+        color: #fff;
+        font-size: 1.8rem;
+        cursor: pointer;
+        opacity: 0.7;
+        transition: opacity 0.2s;
+        z-index: 10000;
+        background: none;
+        border: none;
+        line-height: 1;
+      }
+      #lb2-x:hover {
+        opacity: 1;
+      }
+
+      /* ── END ── */
+      #s-end {
+        text-align: center;
+        background: radial-gradient(
+          ellipse at 50% 50%,
+          #2a0a2e44 0%,
+          transparent 70%
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <div id="pts"></div>
+
+    <div class="hidden" id="prog">
+      <div class="dot" id="d1"></div>
+      <div class="dot" id="d2"></div>
+      <div class="dot" id="d3"></div>
+    </div>
+
+    <!-- ══════════════════════════════
+     INTRO
+══════════════════════════════ -->
+    <div class="screen" id="s-intro">
+      <div class="sq">
+        <span class="crown">👑</span>
+        <p class="i-eyebrow">Sebuah Kejutan Spesial · 2026</p>
+        <h1 class="i-name">Diva <span>Olivia</span></h1>
+        <p class="i-age">
+          Memasuki usia yang sangat...
+          <em style="color: var(--rose-l)">matang</em> ✨
+        </p>
+        <div class="i-divider"></div>
+        <p class="i-hint">Ada 3 kado rahasia untukmu, Mbak Diva.<br /></p>
+        <button class="btn" onclick="goTo('hall')">
+          Buka Rahasianya <span class="arr">→</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════
+     HALL
+══════════════════════════════ -->
+    <div class="screen hidden" id="s-hall">
+      <div class="sq hall-h">
+        <p>Tiga kado sudah menunggu</p>
+        <h2>Pilih Satu per Satu, Mbak 👸</h2>
+      </div>
+
+      <div class="gift-row">
+        <!-- Gift 1: Rose -->
+        <div class="gw" id="g1" onclick="openGift(1)">
+          <div class="gb">
+            <div
+              class="glow"
+              style="
+                background: radial-gradient(
+                  ellipse,
+                  rgba(196, 133, 106, 0.5) 0%,
+                  transparent 70%
+                );
+              "
+            ></div>
+            <div
+              class="lid"
+              style="display: flex; flex-direction: column; align-items: center"
+            >
+              <div
+                style="
+                  position: relative;
+                  width: 118px;
+                  height: 26px;
+                  background: #3a1a10;
+                  border: 1px solid #6a2a18;
+                  border-radius: 2px;
+                "
+              >
+                <div
+                  style="
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 50%;
+                    height: 7px;
+                    transform: translateY(-50%);
+                    background: #c4856a;
+                    opacity: 0.9;
+                  "
+                ></div>
+                <div
+                  style="
+                    position: absolute;
+                    top: -15px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                  "
+                >
+                  <div style="position: relative; width: 40px; height: 18px">
+                    <div
+                      style="
+                        position: absolute;
+                        width: 18px;
+                        height: 14px;
+                        border-radius: 50% 50% 50% 0;
+                        background: #c4856a;
+                        left: -14px;
+                        transform: rotate(-38deg);
+                      "
+                    ></div>
+                    <div
+                      style="
+                        position: absolute;
+                        width: 18px;
+                        height: 14px;
+                        border-radius: 50% 50% 50% 0;
+                        background: #c4856a;
+                        right: -14px;
+                        transform: rotate(38deg) scaleX(-1);
+                      "
+                    ></div>
+                    <div
+                      style="
+                        position: absolute;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        background: var(--rose-l);
+                        top: -4px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        z-index: 1;
+                      "
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="gbody"
+              style="
+                width: 110px;
+                height: 90px;
+                background: #220c08;
+                border: 1px solid #4a1a10;
+                border-radius: 2px;
+                position: relative;
+                overflow: hidden;
+              "
+            >
+              <div
+                style="
+                  position: absolute;
+                  left: 0;
+                  right: 0;
+                  top: 50%;
+                  height: 7px;
+                  transform: translateY(-50%);
+                  background: #c4856a;
+                  opacity: 0.8;
+                "
+              ></div>
+              <div
+                style="
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  left: 50%;
+                  width: 7px;
+                  transform: translateX(-50%);
+                  background: #c4856a;
+                  opacity: 0.8;
+                "
+              ></div>
+              <div
+                style="
+                  position: absolute;
+                  inset: 0;
+                  background: linear-gradient(
+                    135deg,
+                    rgba(255, 255, 255, 0.06) 0%,
+                    transparent 60%
+                  );
+                "
+              ></div>
+            </div>
+          </div>
+          <div class="gn">01</div>
+          <div class="gl">Pesan Ultah</div>
+        </div>
+
+        <!-- Gift 2: Lavender (bigger) -->
+        <div class="gw" id="g2" onclick="openGift(2)">
+          <div class="gb">
+            <div
+              class="glow"
+              style="
+                background: radial-gradient(
+                  ellipse,
+                  rgba(139, 126, 200, 0.5) 0%,
+                  transparent 70%
+                );
+              "
+            ></div>
+            <div
+              class="lid"
+              style="display: flex; flex-direction: column; align-items: center"
+            >
+              <div
+                style="
+                  position: relative;
+                  width: 138px;
+                  height: 28px;
+                  background: #1a1030;
+                  border: 1px solid #3a2060;
+                  border-radius: 2px;
+                "
+              >
+                <div
+                  style="
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 50%;
+                    height: 8px;
+                    transform: translateY(-50%);
+                    background: #8b7ec8;
+                    opacity: 0.9;
+                  "
+                ></div>
+                <div
+                  style="
+                    position: absolute;
+                    top: -15px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                  "
+                >
+                  <div style="position: relative; width: 42px; height: 20px">
+                    <div
+                      style="
+                        position: absolute;
+                        width: 19px;
+                        height: 15px;
+                        border-radius: 50% 50% 50% 0;
+                        background: #8b7ec8;
+                        left: -15px;
+                        transform: rotate(-38deg);
+                      "
+                    ></div>
+                    <div
+                      style="
+                        position: absolute;
+                        width: 19px;
+                        height: 15px;
+                        border-radius: 50% 50% 50% 0;
+                        background: #8b7ec8;
+                        right: -15px;
+                        transform: rotate(38deg) scaleX(-1);
+                      "
+                    ></div>
+                    <div
+                      style="
+                        position: absolute;
+                        width: 11px;
+                        height: 11px;
+                        border-radius: 50%;
+                        background: var(--lav-l);
+                        top: -4px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        z-index: 1;
+                      "
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="gbody"
+              style="
+                width: 130px;
+                height: 110px;
+                background: #0e0820;
+                border: 1px solid #281848;
+                border-radius: 2px;
+                position: relative;
+                overflow: hidden;
+              "
+            >
+              <div
+                style="
+                  position: absolute;
+                  left: 0;
+                  right: 0;
+                  top: 50%;
+                  height: 8px;
+                  transform: translateY(-50%);
+                  background: #8b7ec8;
+                  opacity: 0.8;
+                "
+              ></div>
+              <div
+                style="
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  left: 50%;
+                  width: 8px;
+                  transform: translateX(-50%);
+                  background: #8b7ec8;
+                  opacity: 0.8;
+                "
+              ></div>
+              <div
+                style="
+                  position: absolute;
+                  inset: 0;
+                  background: linear-gradient(
+                    135deg,
+                    rgba(255, 255, 255, 0.06) 0%,
+                    transparent 60%
+                  );
+                "
+              ></div>
+            </div>
+          </div>
+          <div class="gn" style="font-size: 2.5rem; color: var(--lav-d)">
+            02
+          </div>
+          <div class="gl">Mini Game</div>
+        </div>
+
+        <!-- Gift 3: Champagne -->
+        <div class="gw" id="g3" onclick="openGift(3)">
+          <div class="gb">
+            <div
+              class="glow"
+              style="
+                background: radial-gradient(
+                  ellipse,
+                  rgba(226, 201, 154, 0.5) 0%,
+                  transparent 70%
+                );
+              "
+            ></div>
+            <div
+              class="lid"
+              style="display: flex; flex-direction: column; align-items: center"
+            >
+              <div
+                style="
+                  position: relative;
+                  width: 118px;
+                  height: 26px;
+                  background: #2a2008;
+                  border: 1px solid #4a3810;
+                  border-radius: 2px;
+                "
+              >
+                <div
+                  style="
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 50%;
+                    height: 7px;
+                    transform: translateY(-50%);
+                    background: #c4a050;
+                    opacity: 0.9;
+                  "
+                ></div>
+                <div
+                  style="
+                    position: absolute;
+                    top: -15px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                  "
+                >
+                  <div style="position: relative; width: 38px; height: 17px">
+                    <div
+                      style="
+                        position: absolute;
+                        width: 17px;
+                        height: 13px;
+                        border-radius: 50% 50% 50% 0;
+                        background: #c4a050;
+                        left: -13px;
+                        transform: rotate(-38deg);
+                      "
+                    ></div>
+                    <div
+                      style="
+                        position: absolute;
+                        width: 17px;
+                        height: 13px;
+                        border-radius: 50% 50% 50% 0;
+                        background: #c4a050;
+                        right: -13px;
+                        transform: rotate(38deg) scaleX(-1);
+                      "
+                    ></div>
+                    <div
+                      style="
+                        position: absolute;
+                        width: 9px;
+                        height: 9px;
+                        border-radius: 50%;
+                        background: var(--champ-l);
+                        top: -3px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        z-index: 1;
+                      "
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="gbody"
+              style="
+                width: 110px;
+                height: 90px;
+                background: #181200;
+                border: 1px solid #382800;
+                border-radius: 2px;
+                position: relative;
+                overflow: hidden;
+              "
+            >
+              <div
+                style="
+                  position: absolute;
+                  left: 0;
+                  right: 0;
+                  top: 50%;
+                  height: 7px;
+                  transform: translateY(-50%);
+                  background: #c4a050;
+                  opacity: 0.8;
+                "
+              ></div>
+              <div
+                style="
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  left: 50%;
+                  width: 7px;
+                  transform: translateX(-50%);
+                  background: #c4a050;
+                  opacity: 0.8;
+                "
+              ></div>
+              <div
+                style="
+                  position: absolute;
+                  inset: 0;
+                  background: linear-gradient(
+                    135deg,
+                    rgba(255, 255, 255, 0.06) 0%,
+                    transparent 60%
+                  );
+                "
+              ></div>
+            </div>
+          </div>
+          <div class="gn" style="color: var(--champ-d)">03</div>
+          <div class="gl">Voucher</div>
+        </div>
+      </div>
+
+      <p class="hall-foot">Klik kado untuk membukanya 🎀</p>
+    </div>
+
+    <!-- ══════════════════════════════
+     MESSAGE
+══════════════════════════════ -->
+    <div class="screen hidden" id="s-msg">
+      <div class="sw">
+        <button class="back-inner" onclick="goTo('hall')">← Kembali</button>
+
+        <div class="msg-card cr d1">
+          <span class="c-icon">🎂</span>
+          <p class="c-eye">Kado Pertama · Pesan Ulang Tahun</p>
+          <h2 class="c-title">Happy Birthday,<br />Mbak Diva! 🌸</h2>
+          <div class="c-div"></div>
+          <p class="c-body">
+            Selamat memasuki usia <em>26 tahun</em> — usia emas di mana semua
+            hal mulai terasa lebih <em>bermakna</em>, termasuk tidur siang dan
+            diskon belanja online.
+          </p>
+          <p class="c-body" style="margin-top: 0.9rem">
+            <span class="funny"
+              >Kata orang, 26 itu bukan tua. 26 itu... vintage. Klasik. Limited
+              edition.</span
+            >
+            Dan Mbak Diva membuktikannya dengan sangat meyakinkan. 👸
+          </p>
+          <p class="c-body" style="margin-top: 0.9rem">
+            Semoga di tahun ini selalu dilimpahi <em>kebahagiaan</em>, selalu
+            kelihatan awet muda, dan Mas Aris makin sayang setiap harinya. 💕
+          </p>
+          <p class="c-sig">
+            — Dari adik ipar yang selalu mendoakan yang terbaik 🙏
+          </p>
+        </div>
+
+        <div class="facts-grid cr d2">
+          <div class="fact rose">
+            <span class="fi">🎂</span>
+            <div class="ft">Fun Fact #1</div>
+            <div class="fb">
+              Di usia 26, kamu sudah hidup selama
+              <strong style="color: var(--rose-l)">9.490 hari</strong>. Semuanya
+              luar biasa!
+            </div>
+          </div>
+          <div class="fact lav">
+            <span class="fi">👑</span>
+            <div class="ft">Fun Fact #2</div>
+            <div class="fb">
+              26 tahun = sudah cukup dewasa untuk semua keputusan, tapi tetap
+              bisa drama kalau perlu 😂
+            </div>
+          </div>
+          <div class="fact champ">
+            <span class="fi">💍</span>
+            <div class="ft">Fun Fact #3</div>
+            <div class="ft" style="color: var(--champ)"></div>
+            <div class="fb">
+              Jadi Bojone Mas Aris adalah salah satu pencapaian terbaik.
+              Selamat, Mbak! 🥂
+            </div>
+          </div>
+          <div class="fact blush">
+            <span class="fi">🌸</span>
+            <div class="ft">Fun Fact #4</div>
+            <div class="fb">
+              Semakin bertambah usia, semakin cantik. Ini bukan basa-basi, ini
+              fakta sains! 💐
+            </div>
+          </div>
+        </div>
+
+        <div class="next-row cr d3">
+          <button class="btn" onclick="goTo('game')">
+            Buka Kado Berikutnya <span class="arr">→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════
+     GAME
+══════════════════════════════ -->
+    <div class="screen hidden" id="s-game">
+      <div class="sw">
+        <button class="back-inner" onclick="goTo('hall')">← Kembali</button>
+
+        <div class="game-card cr d1">
+          <div class="gh">
+            <h2>🌸 Tangkap Bunganya!</h2>
+            <p>
+              Kado kedua — klik bunga & hati yang jatuh sebelum menyentuh tanah!
+            </p>
+          </div>
+          <div class="gstats">
+            <div class="gs"><span>Skor</span><strong id="sc">0</strong></div>
+            <div class="gs"><span>Level</span><strong id="lv">1</strong></div>
+            <div class="gs"><span>Waktu</span><strong id="ti">30</strong></div>
+            <div class="gs">
+              <span>Miss</span
+              ><strong id="ms" style="color: var(--blush)">0</strong>
+            </div>
+          </div>
+          <div class="ttrack"><div id="tbar" style="width: 100%"></div></div>
+          <div id="arena">
+            <div id="aov">
+              <span style="font-size: 2.5rem">🌸</span>
+              <h3>Siap, Kak? 👸</h3>
+              <p>
+                Tangkap bunga & hati yang jatuh!<br />
+                💎 Berlian = 10 poin<br />
+                ❌ Jangan klik yang ini!
+              </p>
+              <button class="btn-g" id="sbtn">Mulai!</button>
+            </div>
+          </div>
+          <div id="linfo">Tekan mulai untuk bermain</div>
+        </div>
+
+        <div class="next-row cr d2">
+          <button class="btn" onclick="goTo('card')">
+            Buka Kado Terakhir <span class="arr">→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════
+     VOUCHER ALFAMART
+══════════════════════════════ -->
+    <div class="screen hidden" id="s-card">
+      <div class="sw">
+        <button class="back-inner" onclick="goTo('hall')">← Kembali</button>
+
+        <p class="v-alfa-lbl cr d1">Kado Ketiga · Hadiah Spesial 🎁</p>
+
+        <div class="v-alfa-outer cr d2">
+          <div class="vcard-alfa">
+            <div class="vh-alfa">
+              <div class="vlogo-alfa">alfa<span>mart</span></div>
+              <div class="vht-alfa">
+                <h3>Gift Card Digital</h3>
+                <p>Hadiah Ulang Tahun ke-26 🎂</p>
+              </div>
+            </div>
+            <div class="vbody-alfa">
+              <div class="vtag-alfa">🎁 Khusus untuk Mbak Diva</div>
+              <div class="vamt-alfa">
+                <div class="vl">Nilai Gift Card</div>
+                <div class="vv">Rp 100.000</div>
+                <div class="vs">Berlaku di seluruh gerai Alfamart</div>
+              </div>
+              <hr class="vdash-alfa" />
+              <div class="bczone-alfa">
+                <img
+                  src="img/voucheralfa.png"
+                  alt="Gift Card Alfamart"
+                  onclick="openLb2()"
+                  title="Ketuk untuk perbesar"
+                />
+                <div class="zoom-hint-alfa">🔍 Ketuk untuk perbesar</div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 0.45rem;
+                  margin-top: 0.9rem;
+                  font-size: 0.8rem;
+                  color: #666;
+                "
+              >
+                <span>📅</span>
+                <span
+                  >Berlaku s/d:
+                  <strong style="color: #333">Besok Malam</strong></span
+                >
+              </div>
+            </div>
+            <div class="vfoot-alfa">
+              <p>
+                <strong>Syarat &amp; Ketentuan:</strong><br />
+                • Gift card hanya dapat digunakan 1 kali<br />
+                • Tidak dapat digabung dengan promo lain<br />
+                • Tidak dapat dicairkan dalam bentuk uang tunai<br />
+                • Tunjukkan kepada kasir saat pembayaran
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="next-row cr d3">
+          <button class="btn" onclick="goTo('end')">Selesai ✓</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════
+     END
+══════════════════════════════ -->
+    <div class="screen hidden" id="s-end" style="text-align: center">
+      <div class="sq">
+        <span style="font-size: 3rem; display: block; margin-bottom: 1rem"
+          >👑🌸💕</span
+        >
+        <p
+          style="
+            font-size: 0.68rem;
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+            color: var(--rose);
+            margin-bottom: 1.4rem;
+          "
+        >
+          Selesai!
+        </p>
+        <h2 class="i-name" style="font-size: clamp(1.8rem, 5vw, 3rem)">
+          Happy 26th<br /><span>Birthday, Mbak Diva!</span>
+        </h2>
+        <div class="i-divider"></div>
+        <p
+          style="
+            color: var(--tx);
+            max-width: 300px;
+            line-height: 1.8;
+            font-family: &quot;Playfair Display&quot;, serif;
+            font-size: 1.05rem;
+          "
+        >
+          Semoga hari ini jadi hari yang paling berkesan dan penuh senyuman. 🥂
+        </p>
+        <button class="btn" onclick="goTo('hall')" style="margin-top: 1.8rem">
+          ← Lihat Kado Lagi
+        </button>
+      </div>
+    </div>
+
+    <script>
+      /* ── PARTICLES ── */
+      (function () {
+        const items = ["♦", "✦", "·", "◆", "✿", "♡"];
+        const colors = [
+          "#C4856A",
+          "#8B7EC8",
+          "#E2C99A",
+          "#D4899A",
+          "#BDB0E8",
+          "#E8A898",
+        ];
+        const c = document.getElementById("pts");
+        for (let i = 0; i < 40; i++) {
+          const d = document.createElement("div"),
+            s = Math.random() * 14 + 4;
+          d.className = "pt";
+          d.style.cssText = `left:${Math.random() * 100}%;width:${s}px;height:${s}px;background:${colors[i % colors.length]};--d:${5 + Math.random() * 10}s;--dl:${Math.random() * 8}s;--x:${(Math.random() - 0.5) * 80}px;font-size:${s}px;border-radius:${Math.random() > 0.5 ? "50%" : "2px"}`;
+          c.appendChild(d);
+        }
+      })();
+
+      /* ── SCREEN SYSTEM ── */
+      const MAP = {
+        intro: "s-intro",
+        hall: "s-hall",
+        message: "s-msg",
+        game: "s-game",
+        card: "s-card",
+        end: "s-end",
+      };
+      const PMAP = { message: 0, game: 1, card: 2 };
+      let cur = "intro";
+      const opened = new Set();
+
+      function goTo(name) {
+        const from = document.getElementById(MAP[cur]);
+        from.classList.add("exit");
+        setTimeout(() => {
+          from.classList.remove("exit");
+          from.classList.add("hidden");
+          const to = document.getElementById(MAP[name]);
+          to.classList.remove("hidden");
+          // scroll back to top
+          if (to.scrollTop !== undefined) to.scrollTop = 0;
+          cur = name;
+          to.querySelectorAll(".cr").forEach((el) => {
+            el.style.animation = "none";
+            el.offsetHeight;
+            el.style.animation = "";
+          });
+          updateProg(name);
+        }, 360);
+      }
+
+      function updateProg(n) {
+        const pg = document.getElementById("prog");
+        if (PMAP[n] !== undefined) {
+          pg.classList.remove("hidden");
+          ["d1", "d2", "d3"].forEach((id, i) => {
+            const gk = ["message", "game", "card"][i];
+            document.getElementById(id).className =
+              "dot" +
+              (i === PMAP[n] ? " active" : opened.has(gk) ? " done" : "");
+          });
+        } else pg.classList.add("hidden");
+      }
+
+      /* ── GIFT OPEN ── */
+      const GMAP = {
+        1: { scr: "message", el: "g1" },
+        2: { scr: "game", el: "g2" },
+        3: { scr: "card", el: "g3" },
+      };
+      function openGift(n) {
+        const { scr, el } = GMAP[n];
+        const box = document.getElementById(el);
+        if (box.classList.contains("opened")) {
+          goTo(scr);
+          return;
+        }
+        box.classList.add("shaking");
+        setTimeout(() => {
+          box.classList.remove("shaking");
+          box.classList.add("opening");
+          burst(box);
+          setTimeout(() => {
+            box.classList.add("opened");
+            opened.add(scr);
+            goTo(scr);
+          }, 550);
+        }, 700);
+      }
+      function burst(el) {
+        const r = el.getBoundingClientRect(),
+          cx = r.left + r.width / 2,
+          cy = r.top + r.height / 2;
+        const colors = ["#C4856A", "#8B7EC8", "#E2C99A", "#D4899A", "#fff"];
+        const emojis = ["✦", "◆", "✿"];
+        for (let i = 0; i < 16; i++) {
+          const p = document.createElement("div"),
+            a = Math.random() * Math.PI * 2,
+            sp = 30 + Math.random() * 70;
+          p.style.cssText = `position:fixed;width:${3 + Math.random() * 4}px;height:${3 + Math.random() * 4}px;border-radius:50%;background:${colors[i % colors.length]};left:${cx}px;top:${cy}px;pointer-events:none;z-index:999;transition:transform .9s ease-out,opacity .9s;opacity:1`;
+          document.body.appendChild(p);
+          requestAnimationFrame(() => {
+            p.style.transform = `translate(${Math.cos(a) * sp}px,${Math.sin(a) * sp}px) scale(0)`;
+            p.style.opacity = "0";
+          });
+          setTimeout(() => p.remove(), 1000);
+        }
+      }
+
+      /* ── GAME ── */
+      let run = false,
+        score = 0,
+        tLeft = 30,
+        misses = 0,
+        level = 1;
+      let spTO, tkTO;
+
+      // Items: [emoji, points, isEvil]
+      const GOOD = ["🌸", "🌸", "🌸", "💕", "💐", "🌺", "🦋", "🌷", "✨", "🌸"];
+      const DIAMOND = "💎"; // bonus
+      const EVIL = ["💣", "👻", "🕷️"]; // avoid
+
+      function startGame() {
+        score = 0;
+        tLeft = 30;
+        misses = 0;
+        level = 1;
+        run = true;
+        document
+          .querySelectorAll("#arena .item-fall")
+          .forEach((e) => e.remove());
+        const ov = document.getElementById("aov");
+        ov.style.opacity = "0";
+        ov.style.pointerEvents = "none";
+        document.getElementById("linfo").textContent =
+          "Tangkap bunga & hati! Hindari yang jahat!";
+        upUI();
+        sched();
+        tick();
+      }
+
+      function tick() {
+        if (!run) return;
+        tLeft--;
+        document.getElementById("ti").textContent = tLeft;
+        document.getElementById("tbar").style.width = (tLeft / 30) * 100 + "%";
+        chkLv();
+        if (tLeft <= 0) {
+          endGame();
+          return;
+        }
+        tkTO = setTimeout(tick, 1000);
+      }
+
+      function chkLv() {
+        const p = level;
+        if (score >= 30 && level < 2) level = 2;
+        if (score >= 80 && level < 3) level = 3;
+        if (score >= 150 && level < 4) level = 4;
+        if (level !== p) {
+          document.getElementById("lv").textContent = level;
+          document.getElementById("linfo").textContent =
+            `Level ${level}! ${["", "", "Tambah cepat! 🔥", "Super cepat! ⚡", "QUEEN MODE! 👑"][level]}`;
+        }
+      }
+
+      function sched() {
+        if (!run) return;
+        spawnItem();
+        spTO = setTimeout(sched, Math.max(300, 1000 - level * 120));
+      }
+
+      function spawnItem() {
+        if (!run) return;
+        const ar = document.getElementById("arena");
+        const isDiamond = Math.random() < 0.08;
+        const isEvil = Math.random() < 0.12;
+        const el = document.createElement("div");
+        el.className = "item-fall";
+        const aw = ar.offsetWidth || 580;
+        el.style.left = Math.random() * Math.max(20, aw - 50) + "px";
+        el.style.top = "-60px";
+        const dur = Math.max(1200, 3000 - level * 350) + "ms";
+        el.style.animationDuration = dur;
+
+        if (isDiamond) {
+          el.textContent = DIAMOND;
+          el.dataset.pts = "10";
+          el.dataset.evil = "0";
+          el.style.filter = "drop-shadow(0 0 8px #88ccff)";
+        } else if (isEvil) {
+          el.textContent = EVIL[Math.floor(Math.random() * EVIL.length)];
+          el.dataset.pts = "-3";
+          el.dataset.evil = "1";
+        } else {
+          el.textContent = GOOD[Math.floor(Math.random() * GOOD.length)];
+          el.dataset.pts = "1";
+          el.dataset.evil = "0";
+          el.style.filter = "drop-shadow(0 0 4px rgba(196,133,106,.6))";
+        }
+        el.style.fontSize = 1.6 + Math.random() * 0.8 + "rem";
+
+        el.addEventListener("pointerdown", (e) => {
+          e.stopPropagation();
+          tapItem(el);
+        });
+
+        // miss detection
+        el.addEventListener("animationend", () => {
+          if (el.parentNode && !el.classList.contains("caught")) {
+            if (el.dataset.evil === "0") {
+              misses++;
+              document.getElementById("ms").textContent = misses;
+              if (misses >= 10 && run) endGame();
+            }
+            el.remove();
+          }
+        });
+
+        ar.appendChild(el);
+      }
+
+      function tapItem(el) {
+        if (!run || el.classList.contains("caught")) return;
+        el.classList.add("caught");
+        const ar = document.getElementById("arena");
+        const r = el.getBoundingClientRect(),
+          ar2 = ar.getBoundingClientRect();
+        const x = r.left - ar2.left + r.width / 2,
+          y = r.top - ar2.top;
+        const pts = parseInt(el.dataset.pts);
+        const isEvil = el.dataset.evil === "1";
+
+        el.remove();
+
+        const fx = document.createElement("div");
+        fx.className = "catch-fx";
+        fx.style.left = x + "px";
+        fx.style.top = y + "px";
+        fx.textContent = isEvil ? "💥" : "✨";
+        ar.appendChild(fx);
+        setTimeout(() => fx.remove(), 500);
+
+        const sfx = document.createElement("div");
+        sfx.className = isEvil ? "miss-fx" : "pts-fx";
+        sfx.style.left = x + 8 + "px";
+        sfx.style.top = y - 8 + "px";
+        sfx.textContent = (pts > 0 ? "+" : "") + pts;
+        ar.appendChild(sfx);
+        setTimeout(() => sfx.remove(), 800);
+
+        score = Math.max(0, score + pts);
+        if (isEvil) {
+          misses++;
+          document.getElementById("ms").textContent = misses;
+        }
+        upUI();
+        if (misses >= 10 && run) endGame();
+      }
+
+      function upUI() {
+        document.getElementById("sc").textContent = score;
+        document.getElementById("lv").textContent = level;
+        document.getElementById("ti").textContent = tLeft;
+        document.getElementById("ms").textContent = misses;
+      }
+
+      function endGame() {
+        run = false;
+        clearTimeout(spTO);
+        clearTimeout(tkTO);
+        const rtg =
+          score >= 100
+            ? "Kak Div QUEEN! 👑"
+            : score >= 50
+              ? "Keren Banget! 🌸"
+              : "Lumayan dong! 😄";
+        const ov = document.getElementById("aov");
+        ov.innerHTML = `
+    <span style="font-size:2rem">${score >= 100 ? "👑" : score >= 50 ? "🌸" : "😊"}</span>
+    <h3>Selesai!</h3>
+    <div class="score-big">${score}</div>
+    <p style="color:var(--rose-l);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem">${rtg}</p>
+    <p style="color:var(--tx)">Miss: ${misses} kali</p>
+    <button class="btn-g" onclick="startGame()">Main Lagi!</button>
+  `;
+        ov.style.opacity = "1";
+        ov.style.pointerEvents = "all";
+      }
+
+      document.getElementById("sbtn").addEventListener("click", startGame);
+
+      function openLb2(e) {
+        if (e) e.stopPropagation();
+        document.getElementById("lb2").classList.add("on");
+        document.body.style.overflow = "hidden";
+      }
+      function closeLb2() {
+        document.getElementById("lb2").classList.remove("on");
+        document.body.style.overflow = "";
+      }
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          closeLb2();
+        }
+      });
+    </script>
+
+    <div id="lb2" onclick="closeLb2()">
+      <button id="lb2-x" onclick="closeLb2()">✕</button>
+      <img src="img/voucheralfa.png" alt="Gift Card Alfamart" />
+    </div>
+  </body>
+</html>
